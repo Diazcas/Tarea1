@@ -4,4 +4,9 @@ var app = express();
 //middelware
 app.use(express.static('public'));
 
-app.listen(process.env.PORT)
+app.get("/", function (req, res) {
+    res.send("<h1>Hello World!</h1>")
+  })
+
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running..."));
